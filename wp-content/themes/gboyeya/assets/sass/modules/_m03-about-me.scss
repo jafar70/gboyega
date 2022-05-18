@@ -1,0 +1,158 @@
+.m03 {
+	position: relative;
+
+	.container {
+		position: relative;
+	}
+
+	&__media {
+		@include absolute(1);
+		width: 45%;
+		right: 0;
+		left: auto;
+		overflow: hidden;
+		border-radius: 30px;
+
+		@media (max-width: $desk-start) {
+			position: relative;
+			width: 100%;
+		}
+
+		&__image,
+		.plyr {
+			@include absolute(1);
+			object-fit: cover;
+			object-position: top;
+
+			@media (max-width: $desk-start) {
+				position: relative;
+				height: auto;
+			}
+		}
+	}
+
+	&__grid {
+		width: 55%;
+		padding: 70px 73px 70px 0;
+
+		@media (max-width: $desk-start) {
+			width: 100%;
+			padding: 50px 0 0;
+		}
+
+		@media (max-width: $mobile-start) {
+			padding: 50px 0 0;
+		}
+	}
+
+	&__title {
+	}
+
+	&__subtext {
+		margin-bottom: 2em;
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6 {
+			font-family: $font;
+		}
+
+		p,
+		li {
+			color: $black;
+			font-size: 16px;
+			font-weight: 300;
+			letter-spacing: 0.13px;
+			line-height: 24px;
+		}
+
+		ul,
+		ol {
+			padding-left: 30px;
+		}
+	}
+
+	.button {
+		@media (max-width: $desk-start) {
+			margin-bottom: 40px;
+		}
+	}
+
+	&--align-right {
+		.m03__media {
+			@media (min-width: $desk-start) {
+				right: auto;
+				left: 0;
+			}
+		}
+
+		.m03__grid {
+			margin-left: auto;
+			padding: 70px 0 70px 73px;
+
+			@media (max-width: $desk-start) {
+				width: 100%;
+				padding: 50px 0 0;
+			}
+
+			@media (max-width: $mobile-start) {
+				padding: 50px 0 0;
+			}
+		}
+	}
+
+	+ .m03 {
+		margin: 60px 0;
+		@media (max-width: $mobile-start) {
+			margin: 60px 0;
+		}
+	}
+
+	.plyr {
+    border-radius: 28px;
+
+		&:hover {
+			.plyr__control--overlaid[data-plyr="play"] {
+        height: 130px;
+        width: 130px !important;
+
+				svg {
+					width: 45px;
+          height: 45px;
+				}
+      } 
+		}
+    
+    &__control {
+      &--overlaid {
+        transition: all ease 0.3s;
+        height: 122px;
+        width: 122px !important;
+        display: flex !important;
+        justify-content: center;
+        align-items: center;
+				position: absolute;
+      }
+      
+      &.plyr__control--overlaid[data-plyr="play"] {
+        border: 1px solid white;
+        background-color: white;
+
+        svg {
+          width: 40px;
+          height: 40px;
+					fill: $sade--blue;
+					transition: all ease 0.3s;
+        }
+      } 
+    }
+    
+    &--stopped {
+      .plyr__controls {
+        display: none;
+      }
+    }
+  }
+}

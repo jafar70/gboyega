@@ -1,0 +1,20 @@
+$top_padding: 80px;
+$bottom_padding: 80px;
+
+.main,
+.site-main {
+  position: relative;
+	overflow: hidden;
+
+  &__section {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    padding: $top_padding 0 $bottom_padding;
+
+    &--margin {
+      padding: 0;
+      margin: $top_padding 0 $bottom_padding;
+    }
+  }
+}
