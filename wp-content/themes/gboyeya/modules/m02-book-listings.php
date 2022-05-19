@@ -19,7 +19,7 @@ $products = get_field( 'm02_products' );
 		<?php endif; ?>
 
 		<?php if ( $products ) : ?>
-			<div class="m02__grid flex flex-wrap ">
+			<div class="m02__grid flex flex-wrap justify-content--center">
 				<?php
 				foreach ( $products as $product ) :
 					$permalink  = get_permalink( $product->ID );

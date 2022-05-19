@@ -31,15 +31,12 @@ $signature = get_field( 'm01_signature' );
 			<?php endif; ?>
 
 			<div class="m01__grid__text">
-				<div class="m01__white">
 					<?php if ( $heading ) : ?>
 						<h1 class="heading--1">
 						<?php echo wp_kses_post( $heading ); ?>
 						</h1>
 					<?php endif; ?>
-				</div>
 
-				<div class="m01__crail">
 					<?php if ( $cta_title ) : ?>
 						<p><?php echo esc_html( $cta_title ); ?></p>
 					<?php endif; ?>
@@ -52,7 +49,6 @@ $signature = get_field( 'm01_signature' );
 							<a class="button button--white-outline" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
 					<?php endif; ?>
 
-				</div>
 			</div>
 		</div>
 	</div>

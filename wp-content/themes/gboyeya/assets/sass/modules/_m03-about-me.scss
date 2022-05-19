@@ -10,24 +10,37 @@
 		width: 45%;
 		right: 0;
 		left: auto;
-		overflow: hidden;
-		border-radius: 30px;
 
 		@media (max-width: $desk-start) {
 			position: relative;
 			width: 100%;
+			margin-top: 2rem;
 		}
 
-		&__image,
-		.plyr {
+		&--video {
+			overflow: hidden;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+			.plyr {
+				width: 100%;
+			}
+		}
+
+		&--img {
+			border-radius: 30px;
+
+			@media (max-width: $desk-start) {
+				height: 0;
+				padding-bottom: 100%;
+			}
+		}
+
+		&__image {
 			@include absolute(1);
 			object-fit: cover;
 			object-position: top;
-
-			@media (max-width: $desk-start) {
-				position: relative;
-				height: auto;
-			}
 		}
 	}
 
@@ -49,7 +62,6 @@
 	}
 
 	&__subtext {
-		margin-bottom: 2em;
 		h1,
 		h2,
 		h3,
@@ -75,9 +87,7 @@
 	}
 
 	.button {
-		@media (max-width: $desk-start) {
-			margin-bottom: 40px;
-		}
+		margin-top: 2em;
 	}
 
 	&--align-right {
@@ -111,48 +121,48 @@
 	}
 
 	.plyr {
-    border-radius: 28px;
+		border-radius: 28px;
 
 		&:hover {
 			.plyr__control--overlaid[data-plyr="play"] {
-        height: 130px;
-        width: 130px !important;
+				height: 130px;
+				width: 130px !important;
 
 				svg {
 					width: 45px;
-          height: 45px;
+					height: 45px;
 				}
-      } 
+			}
 		}
-    
-    &__control {
-      &--overlaid {
-        transition: all ease 0.3s;
-        height: 122px;
-        width: 122px !important;
-        display: flex !important;
-        justify-content: center;
-        align-items: center;
-				position: absolute;
-      }
-      
-      &.plyr__control--overlaid[data-plyr="play"] {
-        border: 1px solid white;
-        background-color: white;
 
-        svg {
-          width: 40px;
-          height: 40px;
+		&__control {
+			&--overlaid {
+				transition: all ease 0.3s;
+				height: 122px;
+				width: 122px !important;
+				display: flex !important;
+				justify-content: center;
+				align-items: center;
+				position: absolute;
+			}
+
+			&.plyr__control--overlaid[data-plyr="play"] {
+				border: 1px solid white;
+				background-color: white;
+
+				svg {
+					width: 40px;
+					height: 40px;
 					fill: $sade--blue;
 					transition: all ease 0.3s;
-        }
-      } 
-    }
-    
-    &--stopped {
-      .plyr__controls {
-        display: none;
-      }
-    }
-  }
+				}
+			}
+		}
+
+		&--stopped {
+			.plyr__controls {
+				display: none;
+			}
+		}
+	}
 }

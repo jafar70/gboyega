@@ -36,10 +36,6 @@
 			margin: 0 30px 60px;
 		}
 
-		@media (min-width: $desk-start) {
-			width: calc(33.3% - 60px);
-		}
-
 		&:hover {
 			.m02__product__price,
 			.m02__product__title {
@@ -50,13 +46,9 @@
 		&__img {
 			position: relative;
 			overflow: hidden;
-			height: 0;
-			padding-bottom: 120%;
 			width: 100%;
 
 			img {
-				@include absolute(1);
-				object-fit: cover;
 			}
 		}
 
