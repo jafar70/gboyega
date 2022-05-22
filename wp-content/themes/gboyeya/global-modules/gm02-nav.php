@@ -18,7 +18,7 @@ $email        = get_field( 'email_address', 'option' );
 	<div class="container">
 		<div class="gm02__grid flex justify-content--space-between align-items--center">
 			<a href="<?php echo esc_url( home_url() ); ?>" class="gm02__grid__logo">
-				
+				<h2><?php echo esc_html( 'Books by Ranti' ); ?></h2>
 			</a>
 
 			<a class="gm02__grid__closebtn"><?php echo esc_html( '×' ); ?></a>

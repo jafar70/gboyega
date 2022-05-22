@@ -8,17 +8,6 @@
 	&__title {
 		text-align: center;
 		position: relative;
-		padding-bottom: 22px;
-		
-		&:after {
-			content:'';
-			height:2px;
-			width: 10%;
-			background: $black;
-			position:absolute;
-			left:calc(50% - 5%);
-			bottom: 0;
-		}
 	}
 
 	&__grid {
@@ -34,13 +23,6 @@
 		@media (min-width: 550px) {
 			width: calc(50% - 60px);
 			margin: 0 30px 60px;
-		}
-
-		&:hover {
-			.m02__product__price,
-			.m02__product__title {
-				text-decoration-color: $sade--blue !important;
-			}
 		}
 
 		&__img {

@@ -68,8 +68,9 @@
 
 .qib-button:not(#qib_id):not(#qib_id) {
 	background-color: $sade--blue !important;
-	border: 1px solid $sade--blue !important; 
-
+	border: 1px solid $sade--blue !important;
+	color: $white !important;
+	
 	&:hover,
 	&:focus,
 	&:focus-within {

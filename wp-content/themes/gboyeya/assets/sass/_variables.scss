@@ -5,9 +5,8 @@
 /*---------------------------------------
 # Typography.
 ----------------------------------------*/
-$font: "Work Sans", sans-serif;
-$heading-font: "Open Sans", sans-serif;
-$logo-font: "Satisfy", cursive;
+$font: 'Nunito', sans-serif;
+$heading-font: 'Abhaya Libre', serif;
 
 /*---------------------------------------
 # Animation & Transitions.
@@ -29,7 +28,8 @@ $gray:  #E6E9E6;
 $sade--blue: #383e59;
 $sade--light-crail: lighten($color: $sade--blue, $amount: 20);
 $sade--gold: #bdada0;
-
+$sade--gray: #666;
+$sade--dark-gray: #333;
 
 /*---------------------------------------
 # Social Media Colours.

@@ -1,21 +1,20 @@
 .m01 {
 	overflow-x: hidden;
-	padding-top: 50px;
-
-	@media (min-width: $lap-start) {
-		padding-top: 0;
-	}
+	padding: 80px 0;
+	background-blend-mode: multiply;
+  background-image: url(../../themes/gboyeya/assets/img/paper.jpg),linear-gradient(90deg,rgba(148,166,191,0.34) 33%,#f4f4f4 33%)!important;
+	background-size: cover;
+	background-position: 50%;
 
 	&__grid {
 		&__img {
 			display: block;
-			margin: 0 auto;
 			max-width: 100%;
 			position: relative;
 			width: 100%;
 
-			@media (min-width: $lap-start) {
-				width: 50%;
+			@media (min-width: $desk-start) {
+				width: calc(50% - 30px);
 			}
 			
 			img {
@@ -27,21 +26,37 @@
 
 		&__text {
 			width: 100%;
-			text-align: center;
+			text-align: left;
+			margin-top: 2rem;
 
-			@media (min-width: $lap-start) {
-				width: 50%;
-				text-align: left;
+			@media (min-width: $desk-start) {
+				width: calc(50% - 30px);
+				margin-top: 0;
 			}
-
-			
 		}
+	}
+
+	&__author {
+		color: $sade--gold;
+		font-weight: 700;
+		letter-spacing: 0.5px;
+		font-family: $font;
+	}
+
+	&__heading {
+		max-width: 400px;
+	}
+
+	&__subheading {
+
+	}
+
+	&__leader {
+		color: $sade--gray;
+	}
+
+	&__button {
+
 	}
 	
-	+.m03 {
-
-		@media (min-width: $desk-start) {
-			padding: 80px 0 0;
-		}
-	}
 }

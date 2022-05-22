@@ -18,7 +18,7 @@ $email        = get_field( 'email_address', 'option' );
 	<div class="gm03__bottom">
 		<div class="container flex flex-wrap justify-content--space-between">
 			<div class="gm03__bottom__info flex flex-wrap">
-				<p><?php echo esc_html( '©' . gmdate( 'Y' ) . ' Gboyeya Never Gives Up.' ); ?></p>
+				<p><?php echo esc_html( '©' . gmdate( 'Y' ) . ' Books by Ranti.' ); ?></p>
 				<?php
 				wp_nav_menu(
 					array(
@@ -58,11 +58,6 @@ $email        = get_field( 'email_address', 'option' );
 						<?php endif; ?>
 					</div>
 				<?php endif; ?>
-
-				<p class="gm03__bottom__credits__link">
-					<?php echo esc_html( 'Website by ' ); ?>
-					<a href="<?php echo esc_url( 'https://jafarsalami.co.uk' ); ?>" target="_blank"><?php echo esc_html( 'Jafar Salami' ); ?></a>
-				</p>
 			</div>
 		</div>
 	</div>
