@@ -8,10 +8,11 @@
  * @package Jafar_Theme
  */
 
-$twitter_url  = get_field( 'twitter_url', 'option' );
-$facebook_url = get_field( 'facebook_url', 'option' );
-$linkedin_url = get_field( 'linkedin_url', 'option' );
-$email        = get_field( 'email_address', 'option' );
+$twitter_url   = get_field( 'twitter_url', 'option' );
+$facebook_url  = get_field( 'facebook_url', 'option' );
+$linkedin_url  = get_field( 'linkedin_url', 'option' );
+$instagram_url = get_field( 'instagram_url', 'option' );
+$email         = get_field( 'email_address', 'option' );
 ?>
 
 <div class="gm01">
@@ -41,6 +42,13 @@ $email        = get_field( 'email_address', 'option' );
 				</li>
 			<?php endif; ?>
 
+			<?php if ( $instagram_url ) : ?>
+				<a href="<?php echo esc_url( $instagram_url ); ?>" target="_blank" class="gm01__list__link gm01__list__link--instagram">
+					<?php get_template_part( 'assets/svg/instagram.svg' ); ?>				
+				</a>
+			<?php endif; ?>
+
+
 			<?php if ( $email ) : ?>
 				<li>
 					<a href="<?php echo esc_attr( 'mailto:' . $email ); ?>" class="gm01__list__link gm01__list__link--linkedin">
@@ -48,13 +56,6 @@ $email        = get_field( 'email_address', 'option' );
 					</a>
 				</li>
 			<?php endif; ?>
-
-			<li>
-				<a class="gm01__list__link gm01__list__link--search">
-					<?php get_template_part( 'assets/svg/search.svg' ); ?>	
-					<span><?php echo esc_html( 'Search' ); ?></span>			
-				</a>
-			</li>
 
 			<?php echo do_shortcode( '[woo_cart_but]' ); ?>
 

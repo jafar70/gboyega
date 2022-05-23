@@ -47,4 +47,13 @@
 			padding-top: 50px;
 		}
 	}
+
+	.gform_wrapper .gform_validation_errors>h2 {
+		font-family: $font;
+
+		.gform-icon {
+			left: -36px;
+			top: -1px;
+		}
+	} 
 }

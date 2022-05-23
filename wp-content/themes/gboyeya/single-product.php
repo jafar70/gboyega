@@ -21,45 +21,47 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 get_header( 'shop' ); ?>
 
-<div class="container">
+<div class="main">
+	<div class="container">
 
-	<div class="woocommerce-message" role="alert">
-		<span class="woocommerce-message__text">2 × “JIA Wristband” are added to your bag.</span> <a href="<?php echo esc_url( site_url() . '/checkout/' ); ?>" class="woocommerce-message-link">Go to checkout</a> | <a href="<?php echo esc_url( site_url() . '/store/' ); ?>" class="woocommerce-message-link">Continue shopping</a>
+		<div class="woocommerce-message" role="alert">
+			<span class="woocommerce-message__text">2 × “JIA Wristband” are added to your bag.</span> <a href="<?php echo esc_url( site_url() . '/checkout/' ); ?>" class="woocommerce-message-link">Go to checkout</a> | <a href="<?php echo esc_url( site_url() . '/store/' ); ?>" class="woocommerce-message-link">Continue shopping</a>
+		</div>
+		<?php
+			/**
+			 * woocommerce_before_main_content hook.
+			 *
+			 * @hooked woocommerce_output_content_wrapper - 10 (outputs opening divs for the content)
+			 * @hooked woocommerce_breadcrumb - 20
+			 */
+			do_action( 'woocommerce_before_main_content' );
+		?>
+
+			<?php while ( have_posts() ) : ?>
+				<?php the_post(); ?>
+
+				<?php wc_get_template_part( 'content', 'single-product' ); ?>
+
+			<?php endwhile; // end of the loop. ?>
+
+		<?php
+			/**
+			 * woocommerce_after_main_content hook.
+			 *
+			 * @hooked woocommerce_output_content_wrapper_end - 10 (outputs closing divs for the content)
+			 */
+			do_action( 'woocommerce_after_main_content' );
+		?>
+
+		<?php
+			/**
+			 * woocommerce_sidebar hook.
+			 *
+			 * @hooked woocommerce_get_sidebar - 10
+			 */
+			// do_action( 'woocommerce_sidebar' );
+		?>
 	</div>
-	<?php
-		/**
-		 * woocommerce_before_main_content hook.
-		 *
-		 * @hooked woocommerce_output_content_wrapper - 10 (outputs opening divs for the content)
-		 * @hooked woocommerce_breadcrumb - 20
-		 */
-		do_action( 'woocommerce_before_main_content' );
-	?>
-
-		<?php while ( have_posts() ) : ?>
-			<?php the_post(); ?>
-
-			<?php wc_get_template_part( 'content', 'single-product' ); ?>
-
-		<?php endwhile; // end of the loop. ?>
-
-	<?php
-		/**
-		 * woocommerce_after_main_content hook.
-		 *
-		 * @hooked woocommerce_output_content_wrapper_end - 10 (outputs closing divs for the content)
-		 */
-		do_action( 'woocommerce_after_main_content' );
-	?>
-
-	<?php
-		/**
-		 * woocommerce_sidebar hook.
-		 *
-		 * @hooked woocommerce_get_sidebar - 10
-		 */
-		// do_action( 'woocommerce_sidebar' );
-	?>
 </div>
 <?php
 get_footer( 'shop' );

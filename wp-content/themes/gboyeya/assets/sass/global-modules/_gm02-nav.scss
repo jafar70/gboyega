@@ -117,7 +117,8 @@
 					margin: 0 39px 0 0;
 				}
 
-				&.current_page_item {
+				&.current_page_item,
+				&.current-menu-item {
 					a {
 						-webkit-text-stroke: 0.5px $sade--blue;
 						color: $sade--blue;
@@ -126,6 +127,7 @@
 			}
 
 			&.current_page_item,
+			&.current-menu-item,
 			&.current_page_parent {
 				a {
 					-webkit-text-stroke: 0.5px $sade--blue;

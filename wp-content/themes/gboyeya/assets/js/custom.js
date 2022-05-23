@@ -67,34 +67,6 @@ jQuery(document).ready(function ($) {
 })();
 "use strict";
 
-(function () {
-  var navSearchButton = document.querySelector('.gm01__list__link--search');
-  var searchDropdown = document.querySelector('.gm04');
-  var background = document.querySelector('.background-overlay');
-  var closeButton = document.querySelector('.gm04__close');
-  closeButton.addEventListener('click', function () {
-    navSearchButton.classList.toggle('active');
-    searchDropdown.classList.toggle('is-active');
-    background.classList.toggle('is-active');
-  });
-
-  var toggleSearch = function toggleSearch(event) {
-    event.stopPropagation();
-    navSearchButton.classList.toggle('active');
-
-    if (!event.target.closest('.gm04')) {
-      searchDropdown.classList.toggle('is-active');
-      background.classList.toggle('is-active');
-      searchDropdown.classList.contains('is-active') ? document.addEventListener('click', toggleSearch) : document.removeEventListener('click', toggleSearch);
-    } else {
-      console.log('yoo');
-    }
-  };
-
-  navSearchButton.addEventListener('click', toggleSearch);
-})();
-"use strict";
-
 /**
  * LazyLoad
  * Animated scroll to a hashed element on the page.

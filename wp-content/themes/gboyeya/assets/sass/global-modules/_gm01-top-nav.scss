@@ -15,12 +15,8 @@
 		}
 
 		&__link {
-			display: none;
+			display: inline-block;
 			padding: 9px 10px;
-
-			@media (min-width: $mobile-start){
-				display: inline-block;
-			}
 			
 			svg {
 				width: 14px;
@@ -45,24 +41,6 @@
 					transition: all .2s ease;
 					margin-left: 2px;
 					font-weight: 700;
-				}
-			}
-
-			&--search {
-				display: flex;
-				padding: 9px;
-				align-items: center;
-
-				span {
-					display: inline-block;
-					vertical-align: baseline;
-					color: $white;
-					font-size: 13px;
-					line-height: 1;
-					padding: 0 0 0 2px;
-					-webkit-transition: all .2s ease;
-					transition: all .2s ease;
-					font-weight: 500;
 				}
 			}
 		}

@@ -2,9 +2,13 @@
 	overflow-x: hidden;
 	padding: 80px 0;
 	background-blend-mode: multiply;
-  background-image: url(../../themes/gboyeya/assets/img/paper.jpg),linear-gradient(90deg,rgba(148,166,191,0.34) 33%,#f4f4f4 33%)!important;
+  background-image: url(../../themes/gboyeya/assets/img/paper.jpg),linear-gradient(180deg,rgba(148,166,191,0.34) 33%,#f4f4f4 33%)!important;
 	background-size: cover;
 	background-position: 50%;
+
+	@media (min-width: $desk-start) {
+		background-image: url(../../themes/gboyeya/assets/img/paper.jpg),linear-gradient(90deg,rgba(148,166,191,0.34) 33%,#f4f4f4 33%)!important;
+	}
 
 	&__grid {
 		&__img {
@@ -18,9 +22,7 @@
 			}
 			
 			img {
-				@media (min-width: $lap-start) {
-					
-				}
+				width: 100%;
 			}
 		}
 
