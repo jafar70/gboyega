@@ -1,62 +1,48 @@
-<?php
-/**
- * The template for displaying search results pages
- *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#search-result
- *
- * @package Jafar_Theme
- */
+<?php 
+//////////////////
+//Text variables//
+//////////////////
+$searched_message = 'You have searched for:';
+$has_results = 'Pages that matches your query:';
+$no_results = 'No pages matches your query';
 
-get_header();
-?>
 
-	<main id="primary" class="site-main gm05">
-		<section class="m06">
-			<div class="container">
-				<h1 class="m06__title">
-					<?php
-					/* translators: %s: search query. */
-					printf( esc_html__( 'Search Results for: %s', 'jafar-theme' ), '<span>' . get_search_query() . '</span>' );
-					?>
-				</h1>
+if(isset($_POST['search'])) {
 
-				<?php get_template_part( 'search', 'form-page' ); ?>
-			</div>
-		</section>
+	if(!empty($_POST['search'])) {
+		$search  = stripslashes(strip_tags(trim($_POST['search'])));
+		//if search is empty - exit with no results
+		if(!$search) {	
+			echo $no_results;
+			exit();
+		}
+	}
 
-		<div class="container container--small m10">
-		<?php if ( have_posts() ) : ?>
+	$dir = ".";
+	$found_files = array();
 
-			<?php
-			/* Start the Loop */
-			while ( have_posts() ) :
-				the_post();
+	//serching query string inside site root dierectory in HTML files
+	foreach( new DirectoryIterator($dir) as $file) {
+	    if( $file->isFile() && strtolower($file->getExtension()) === 'html') {
+	        $content = strip_tags(file_get_contents($file->getBasename()));
+	        if(stripos($content, $search) !== false) {
+	        	$found_files[] = $file->getBasename('.html');
+	        }
+	        
+	    }
+	}
 
-				/**
-				 * Run the loop for the search to output the results.
-				 * If you want to overload this in a child theme then include a file
-				 * called content-search.php and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', 'search' );
+	//building response text
+	echo $searched_message . ' <strong>' . $search . '</strong><br>';
 
-			endwhile;
-
-			the_posts_pagination(
-				array(
-					'mid_size'  => 3,
-					'prev_text' => __( '«' ),
-					'next_text' => __( '»' ),
-				)
-			);
-
-		else :
-
-			get_template_part( 'template-parts/content', 'none' );
-
-		endif;
-		?>
-		</div>
-	</main><!-- #main -->
-
-<?php
-get_footer();
+	//if found something
+	if($found_files) {
+		echo $has_results . '<br>';
+		foreach ($found_files as $key => $file) {
+			echo '<a href="' . $file . '.html">' . ucfirst($file) . '</a><br>';
+		}
+	//if no search results
+	} else {
+		echo $no_results;
+	}
+}

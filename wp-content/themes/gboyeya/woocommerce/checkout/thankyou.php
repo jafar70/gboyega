@@ -18,8 +18,15 @@
 defined( 'ABSPATH' ) || exit;
 ?>
 
-<div class="woocommerce-order container">
+<section class="m06 break-out">
+	<div class="container">
+		<h1 class="m06__title">
+			<?php echo esc_html__( 'Thank You.', 'jafar-theme' ); ?>
+		</h1>
+	</div>
+</section>
 
+<div class="woocommerce-order container">
 	<?php
 	if ( $order ) :
 

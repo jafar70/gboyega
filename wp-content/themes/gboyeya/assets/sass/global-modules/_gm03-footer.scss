@@ -93,7 +93,7 @@
 			&:focus-within {
 
 				svg {
-					color: $sade--blue;
+					//color: $sade--blue;
 				}
 			}
 
@@ -150,8 +150,8 @@
 						transition: all ease 0.3s;
 
 						&:hover {
-							-webkit-text-stroke: 0.5px $sade--blue;
-							color: $sade--blue;
+							// -webkit-text-stroke: 0.5px $sade--blue;
+							// color: $sade--blue;
 						}
 					}
 				}
@@ -174,8 +174,8 @@
 					transition: all ease 0.3s;
 
 					&:hover {
-						-webkit-text-stroke: 0.5px $sade--blue;
-						color: $sade--blue;
+						// -webkit-text-stroke: 0.5px $sade--blue;
+						// color: $sade--blue;
 					}
 				}
 			}

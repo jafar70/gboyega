@@ -45,16 +45,10 @@ jQuery(document).ready(function ($) {
   var menu = document.querySelector('.gm02__grid__menu');
   var background = document.querySelector('.background-overlay');
   var closeButton = document.querySelector('.gm02__grid__closebtn');
-  var navSearchButton = document.querySelector('.gm01__list__link--search');
-  var searchDropdown = document.querySelector('.gm04');
-
   var toggle = function toggle(event) {
     event.stopPropagation();
     hamburgerIcon.classList.toggle('active');
-    navSearchButton.classList.toggle('active');
-    searchDropdown.classList.remove('is-active');
     background.classList.remove('is-active');
-
     if (!event.target.closest('.gm02__grid__menu')) {
       menu.classList.toggle('active');
       background.classList.toggle('active');
@@ -62,7 +56,6 @@ jQuery(document).ready(function ($) {
       menu.classList.contains('active') ? document.addEventListener('click', toggle) : document.removeEventListener('click', toggle);
     } else {}
   };
-
   hamburgerIcon.addEventListener('click', toggle);
 })();
 "use strict";
@@ -80,7 +73,8 @@ jQuery(document).ready(function ($) {
  * <div class="lazy" data-bg="https://via.placeholder.com/150"></div>
  */
 (function () {
-  var lazyLoadInstance = new LazyLoad({// Your custom settings go here
+  var lazyLoadInstance = new LazyLoad({
+    // Your custom settings go here
   });
 })();
 "use strict";
@@ -92,7 +86,6 @@ jQuery(document).ready(function ($) {
    */
   var searchField = document.getElementById("search");
   var clearFieldButton = document.querySelector(".search-form__close");
-
   if (searchField) {
     searchField.addEventListener('keyup', function () {
       if (searchField.value == '') {
@@ -102,7 +95,6 @@ jQuery(document).ready(function ($) {
       }
     });
   }
-
   if (clearFieldButton) {
     clearFieldButton.addEventListener('click', function (e) {
       e.preventDefault();
@@ -110,15 +102,13 @@ jQuery(document).ready(function ($) {
       clearFieldButton.style.display = 'none';
     }, false);
   }
+
   /**
   * Search results Form
   * Used in search-form-page.php
   */
-
-
   var pageSearchField = document.getElementById("search-page");
   var pageClearFieldButton = document.querySelector(".search-form__close-page");
-
   if (pageSearchField) {
     pageSearchField.addEventListener('keyup', function () {
       if (pageSearchField.value == '') {
@@ -128,7 +118,6 @@ jQuery(document).ready(function ($) {
       }
     });
   }
-
   if (pageSearchField) {
     pageClearFieldButton.addEventListener('click', function (e) {
       e.preventDefault();

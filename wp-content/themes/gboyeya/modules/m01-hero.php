@@ -14,16 +14,17 @@ $subheading  = get_field( 'm01_subtitle' );
 $leader      = get_field( 'm01_leader' );
 $cta         = get_field( 'm01_button' );
 $image       = get_field( 'm01_image' );
-$image_attr  = 'data-src=' . $image['url'] . '';
 
-$size   = 'large';
+$size   = 'medium_large';
 $thumb  = $image['sizes'][ $size ];
 $width  = $image['sizes'][ $size . '-width' ];
 $height = $image['sizes'][ $size . '-height' ];
 
+$image_attr = 'data-src=' . $thumb . '';
 if ( is_admin() ) {
-	$image_attr = 'src=' . $image['url'] . '';
+	$image_attr = 'src=' . $thumb . '';
 }
+
 $caption   = get_field( 'm01_caption' );
 $signature = get_field( 'm01_signature' );
 ?>

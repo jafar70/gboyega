@@ -51,8 +51,7 @@ if ( ! function_exists( 'jafar_theme_setup' ) ) :
 		register_nav_menus(
 			array(
 				'main-menu'     => esc_html__( 'Main Menu', 'jafar-theme' ),
-				'footer-menu'   => esc_html__( 'Footer Menu', 'jafar-theme' ),
-				'bottom-footer' => esc_html__( 'Bottom Footer Menu', 'jafar-theme' ),
+				'bottom-footer' => esc_html__( 'Footer Menu', 'jafar-theme' ),
 			)
 		);
 
@@ -108,6 +107,39 @@ if ( ! function_exists( 'jafar_theme_setup' ) ) :
 	}
 endif;
 add_action( 'after_setup_theme', 'jafar_theme_setup' );
+
+add_filter(
+	'woocommerce_get_image_size_single',
+	function( $size ) {
+		return array(
+			'width'  => 800,
+			'height' => 800,
+			'crop'   => 0,
+		);
+	}
+);
+
+add_filter(
+	'woocommerce_get_image_size_thumbnail',
+	function( $size ) {
+		return array(
+			'width'  => 500,
+			'height' => 500,
+			'crop'   => 1,
+		);
+	}
+);
+
+add_filter(
+	'woocommerce_get_image_size_gallery_thumbnail',
+	function( $size ) {
+		return array(
+			'width'  => 400,
+			'height' => 400,
+			'crop'   => 1,
+		);
+	}
+);
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.

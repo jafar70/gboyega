@@ -172,5 +172,28 @@
 }
 
 .woocommerce-page table.cart td.actions .coupon{
-	display: none;
+	display: flex;
+	flex-wrap: wrap;
+	width: 100%;
+	margin-bottom: 1rem;
+	@media(min-width: $lap-start){
+		flex-wrap: nowrap;
+	}
+
+	.input-text {
+		width: 100%;
+		margin: 0 0 1rem 0;
+
+		@media(min-width: $lap-start){
+			width: calc(100% - 211px);
+			margin: 0 22px 0 0;
+		}
+
+		+.button {
+			width: 100%;
+			@media(min-width: $lap-start){
+				width: auto;
+			}
+		}
+	}
 }

@@ -39,6 +39,16 @@ input[type='password'] {
   }
 }
 
+input[type='radio'],
+input[type='checkbox'] {
+	appearance: auto;
+	width: auto;
+}
+
+input[type='radio'] {
+	margin-top: 8px !important;
+}
+
 .gform_ajax_spinner {
   @extend .spinner;
 }

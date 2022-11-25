@@ -32,6 +32,5 @@
 	<header id="masthead" class="site-header">
 		<?php get_template_part( 'global-modules/gm01', 'top-nav' ); ?>
 		<?php get_template_part( 'global-modules/gm02', 'nav' ); ?>
-		<?php get_template_part( 'global-modules/gm04', 'search-dropdown' ); ?>
 		<div class="background-overlay"></div>
 	</header>

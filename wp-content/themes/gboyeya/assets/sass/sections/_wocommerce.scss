@@ -67,9 +67,10 @@
 }
 
 .qib-button:not(#qib_id):not(#qib_id) {
-	background-color: $sade--blue !important;
-	border: 1px solid $sade--blue !important;
+	background-color: red !important;
+	border: 1px solid red !important;
 	color: $white !important;
+	z-index: 999;
 	
 	&:hover,
 	&:focus,
@@ -84,6 +85,7 @@
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: space-between;
+		align-items: flex-start;
 		margin-top: 60px;
 	}
 
@@ -106,7 +108,10 @@
 	.cart-collaterals {
 		.cart_totals {
 			width: 100%;
-			padding: 0 20px 70px;
+
+			@media (min-width: 768px) {
+				padding: 0 20px 70px;
+			}
 		}
 	} 
 } 
@@ -132,4 +137,43 @@
 	a {
 		text-decoration: none;
 	}
+}
+
+.woocommerce-shipping-totals {
+	th {
+		display: flex;
+	}
+}
+
+.tax-total {
+	display: none !important;
+}
+
+.woocommerce-order.container {
+	margin: 4rem auto;
+	width: 100%;
+}
+
+.product-quantity {
+	display: flex;
+
+	.quantity {
+		display: flex;
+
+		@media (max-width: 768px) {
+			justify-content: flex-end;
+		}
+	
+		.qty {
+			margin: 0 6px;
+		}
+	}
+}
+
+.woocommerce div.product form.cart div.quantity {
+	float: none !important;
+}
+
+.return-to-shop {
+	margin-bottom: 60px !important;
 }
