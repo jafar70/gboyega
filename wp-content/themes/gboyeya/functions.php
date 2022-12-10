@@ -258,21 +258,3 @@ require get_template_directory() . '/inc/block-api.php';
  */
 require get_template_directory() . '/inc/acf-options.php';
 
-/**
- * Defer_parsing_of_js
- *
- * @param array $url URLs of JavaScript.
- */
-function defer_parsing_of_js( $url ) {
-	if ( is_user_logged_in() ) {
-		return $url;
-	}
-	if ( false === strpos( $url, '.js' ) ) {
-		return $url;
-	}
-	if ( strpos( $url, 'jquery.js' ) ) {
-		return $url;
-	}
-	return str_replace( ' src', ' defer src', $url );
-}
-add_filter( 'script_loader_tag', 'defer_parsing_of_js', 10 );
